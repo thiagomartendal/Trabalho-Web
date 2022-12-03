@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Chat
+    </title>
+    <link rel="icon" type="image/x-icon" href="img/icone.png" />
+    <link href="css/estiloIndex.css" type="text/css" rel="stylesheet" />
+    <script src="js/scriptIndex.js" type="text/javascript" defer>
+    </script>
+  </head>
+  <body onload="checarLogin()">
+    <section>
+      <div id="apresentacao">
+        <img src="img/logo2.png" />
+      </div>
+      <div id="login">
+        <div class="interno">
+          <h1>Acessar Conta</h1>
+          <form action="login" method="post">
+            <div class="grade">
+              <div class="lin1">
+                <div class="col1">
+                  Email
+                </div>
+                <div class="col2">
+                  <input type="text" name="email-login" placeholder="Email para acesso" />
+                </div>
+              </div>
+              <div class="lin2">
+                <div class="col1">
+                  Senha
+                </div>
+                <div class="col2">
+                  <input type="password" name="senha-login" placeholder="Senha da conta" />
+                </div>
+              </div>
+            </div>
+            <div class="botoes">
+              <input type="submit" class="btn" value="Entrar">
+              <input type="button" class="btn" value="Nova Conta" onclick="exibirNovaConta()">
+            </div>
+          </form>
+          <h4 id="msgLogin" style="text-align: center; padding: 5px;"></h4>
+          <div id="novaConta">
+            <h1>Nova Conta</h1>
+            <form>
+              <div class="grade">
+                <div class="lin1">
+                  <div class="col1">
+                    Nome
+                  </div>
+                  <div class="col2">
+                    <input type="text" name="nome-conta" placeholder="Um nome de usuário" />
+                  </div>
+                </div>
+                <div class="lin2">
+                  <div class="col1">
+                    Email
+                  </div>
+                  <div class="col2">
+                    <input type="text" name="email-conta" placeholder="Email para acesso" />
+                  </div>
+                </div>
+                <div class="lin3">
+                  <div class="col1">
+                    Senha
+                  </div>
+                  <div class="col2">
+                    <input type="password" name="senha-conta" placeholder="Senha da conta" />
+                  </div>
+                </div>
+              </div>
+              <div class="botoes">
+                <input type="button" class="btn" value="Cancelar" onclick="esconderNovaConta()" />
+                <input type="button" class="btn" value="Criar Conta" onclick="envioNovaConta()" />
+              </div>
+            </form>
+            <h4 id="msgNovaConta" style="text-align: center; padding: 5px;"></h4>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

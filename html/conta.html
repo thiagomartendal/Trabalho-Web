@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      Conta
+    </title>
+    <link rel="icon" type="image/x-icon" href="img/icone.png" />
+    <link href="css/estiloConta.css" type="text/css" rel="stylesheet" />
+    <script src="js/scriptConta.js" type="text/javascript">
+    </script>
+    <script type="text/javascript">
+      boasVindas()
+    </script>
+  </head>
+  <body>
+    <section>
+      <div id="painel">
+        <div id="painel-lateral">
+          <div class="acoes-topo">
+            <h1 id="boas-vindas">Bem-Vindo </h1>
+            <br />
+            <form class="formulario" onsubmit="busca(); event.preventDefault()">
+              Buscar Usuários
+              <br />
+              <input type="text" name="valor-busca" placeholder="Buscar por nome ou email" />
+              <input type="button" name="buscar" value="Buscar" class="btn" onclick="busca()" />
+            </form>
+            <br />
+            <form action="/sair" method="get" class="formulario">
+              <input type="button" value="Editar Perfil" class="btn" onclick="exibirLightbox()" />
+              <input type="submit" value="Sair" class="btn" />
+            </form>
+          </div>
+          <div id="resultados">
+          </div>
+        </div>
+        <div id="painel-central">
+          <div id="conversa">
+            <div id="titulo"></div>
+            <div id="barra-mensagens">
+              <div id="mensagens"></div>
+            </div>
+            <div id="digitacao">
+              <form>
+                <div id="col1">
+                  <textarea placeholder="Digite uma mensagem" name="mensagem" fixed></textarea>
+                </div>
+                <div id="col2">
+                  <input type="button" value="Enviar" class="btn" onclick="enviarMensagem()" />
+                  <span class="espaco"></span>
+                  <input type="reset" value="Cancelar" class="btn" />
+                  <span class="espaco"></span>
+                  <input type="button" value="Fechar" class="btn" onclick="encerrarConversa()" />
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="lightbox" class="lightbox">
+        <div id="painel-informacoes">
+          <form>
+            <div id="interno-painel-informacoes">
+              <div id="row1">
+                <div id="col1">
+                  Nome:
+                </div>
+                <div id="col2">
+                  <input type="text" />
+                </div>
+              </div>
+              <div id="row2">
+                <div id="col1">
+                  Email:
+                </div>
+                <div id="col2">
+                  <input type="text" />
+                </div>
+              </div>
+              <div id="row3">
+                <div id="col1">
+                  Senha:
+                </div>
+                <div id="col2">
+                  <input type="password" />
+                </div>
+              </div>
+              <div id="row4">
+                <div id="col1">
+                  Confirmar senha:
+                </div>
+                <div id="col2">
+                  <input type="password" />
+                </div>
+              </div>
+            </div>
+            <br />
+            <input type="button" value="Fechar" class="btn" onclick="esconderLightbox()" />
+            <input type="button" value="Atualizar Dados" class="btn" />
+          </form>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
