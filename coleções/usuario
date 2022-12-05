@@ -1,0 +1,22 @@
+[{
+  "_id": {
+    "$oid": "6341b8d2c2f4e46768fa98eb"
+  },
+  "nome": "admin",
+  "email": "admin",
+  "senha": "admin"
+},{
+  "_id": {
+    "$oid": "637ffc52ca24a4e548bcdbfa"
+  },
+  "nome": "nome",
+  "email": "email",
+  "senha": "senha"
+},{
+  "_id": {
+    "$oid": "63892235bb2cfa09f55a30f9"
+  },
+  "nome": "nome",
+  "email": "email2",
+  "senha": "senha"
+}]

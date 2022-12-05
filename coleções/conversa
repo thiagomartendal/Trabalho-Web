@@ -1,0 +1,148 @@
+[{
+  "_id": {
+    "$oid": "63894edc3132cf7e5099f030"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "Olá"
+},{
+  "_id": {
+    "$oid": "6389595507eab4bec063c6d6"
+  },
+  "email_usuario_remetente": "email",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "Olá"
+},{
+  "_id": {
+    "$oid": "63895ff807eab4bec063c6d7"
+  },
+  "email_usuario_remetente": "email",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "Tudo bem?"
+},{
+  "_id": {
+    "$oid": "6389616507eab4bec063c6d8"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "Tudo sim"
+},{
+  "_id": {
+    "$oid": "6389616c07eab4bec063c6d9"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "E aí?"
+},{
+  "_id": {
+    "$oid": "6389702f173d1c46c1566a29"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email2",
+  "mensagem": "E aí"
+},{
+  "_id": {
+    "$oid": "6389705dface12c214c780e7"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email2",
+  "mensagem": "tudo bem?"
+},{
+  "_id": {
+    "$oid": "638971409cbf33004946e12b"
+  },
+  "email_usuario_remetente": "email",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "Aqui tudo bem"
+},{
+  "_id": {
+    "$oid": "638971689cbf33004946e12c"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "Legal"
+},{
+  "_id": {
+    "$oid": "638971759cbf33004946e12d"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "Como está a chuva na sua cidade?"
+},{
+  "_id": {
+    "$oid": "638971949cbf33004946e12e"
+  },
+  "email_usuario_remetente": "email",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "Está dificíl, alagou muitos lugares por aqui."
+},{
+  "_id": {
+    "$oid": "6389756a529aca20192987f5"
+  },
+  "email_usuario_remetente": "email2",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "E aí"
+},{
+  "_id": {
+    "$oid": "63897578529aca20192987f6"
+  },
+  "email_usuario_remetente": "email2",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "Tudo sim.\nE com você?"
+},{
+  "_id": {
+    "$oid": "638977f5dc300e70fa8bf5cf"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email2",
+  "mensagem": "Tudo bem também. <br /> \nOs dias estão bons."
+},{
+  "_id": {
+    "$oid": "63897828dc300e70fa8bf5d0"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "Entendo, aqui também choveu muito e acabou alagando muitas ruas. <br /> \nFelizmente estamos todos bens."
+},{
+  "_id": {
+    "$oid": "63897838dc300e70fa8bf5d1"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "Mas espero que essa chuva pare logo."
+},{
+  "_id": {
+    "$oid": "638979e5dc300e70fa8bf5d2"
+  },
+  "email_usuario_remetente": "email",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "Eu também espero. <br /> \nQue aproveitar mais o sol."
+},{
+  "_id": {
+    "$oid": "638b5afec9a432baa6d0fd3a"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "Também quero o sol"
+},{
+  "_id": {
+    "$oid": "638b5c55dd0f3b117023924a"
+  },
+  "email_usuario_remetente": "email",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "Você gostaria de sair pra beber?"
+},{
+  "_id": {
+    "$oid": "638b5d6f66303700d0d7e679"
+  },
+  "email_usuario_remetente": "admin",
+  "email_usuario_destinatario": "email",
+  "mensagem": "Claro, em qual barzinho?"
+},{
+  "_id": {
+    "$oid": "638b5fd066303700d0d7e67a"
+  },
+  "email_usuario_remetente": "email",
+  "email_usuario_destinatario": "admin",
+  "mensagem": "Algum de esquina no centro"
+}]
