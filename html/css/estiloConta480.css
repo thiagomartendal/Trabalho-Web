@@ -1,0 +1,300 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #E0FFFF;
+}
+
+section .btn {
+  border: 2px solid #008B8B;
+  background-color: #008B8B;
+  padding: 5px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+
+section .btn:hover {
+  border: 2px solid #008B8B;
+  background-color: white;
+  color: #008B8B;
+}
+
+section .largura-botao {
+  width: 250px;
+}
+
+section #painel #painel-lateral {
+  border-left: 3px solid #008B8B;
+  border-right: 3px solid #008B8B;
+  background-color: white;
+  width: 400px;
+  height: 100vh;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center;
+  margin: 0px auto;
+}
+
+section #painel #painel-lateral .acoes-topo {
+  padding-top: 15px;
+}
+
+section #painel #painel-lateral h1 {
+  color: #008B8B;
+  text-align: center;
+}
+
+section #painel #painel-lateral .formulario {
+  color: #008B8B;
+  text-align: center;
+}
+
+section #painel #painel-lateral .formulario input[name="valor-busca"] {
+  border: 2px solid #008B8B;
+  padding-top: 7px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  outline: none;
+  margin-right: -7px;
+}
+
+section #painel #painel-lateral #resultados {
+  padding-top: 15px;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+section #painel #painel-central {
+  opacity: 0;
+  visibility: hidden;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  transition: all 0.15s ease-in;
+  padding-top: 20px;
+  overflow-y: auto;
+}
+
+section #painel #painel-central.show {
+  background-color: rgba(0,0,0, 0.85);
+  opacity: 1;
+  visibility: visible;
+  z-index: 1000;
+}
+
+section #painel #painel-central #conversa {
+  border: 3px solid #008B8B;
+  background-color: white;
+  width: 400px;
+  /* height: 550px; */
+  height: 90vh;
+  min-height: 440px;
+  visibility: hidden;
+  display: grid;
+  grid-template-rows: 45px auto 30%;
+}
+
+section #painel #painel-central #conversa.show {
+  visibility: visible;
+}
+
+section #painel #painel-central #conversa #titulo {
+  background-color: #008B8B;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  height: 40px;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 1;
+}
+
+section #painel #painel-central #conversa #barra-mensagens {
+  width: 400px;
+  /* height: 340px;
+  max-height: 340px; */
+  padding-bottom: 15px;
+  overflow-y: auto;
+  grid-row: 2;
+}
+
+section #painel #painel-central #conversa #mensagens {
+  width: 350px;
+  /* height: 340px;
+  max-height: 340px; */
+  text-align: center;
+  margin: 0px auto;
+}
+
+section #painel #painel-central #conversa #mensagens .linhaMsg1 {
+  width: 300px;
+  float: left;
+  text-align: left;
+  padding-top: 15px;
+}
+
+section #painel #painel-central #conversa #mensagens .linhaMsg2 {
+  width: 300px;
+  float: right;
+  text-align: right;
+  padding-top: 15px;
+}
+
+section #painel #painel-central #conversa #mensagens .linhaMsg1 .msg1 {
+  border: 2px solid #008B8B;
+  background-color: white;
+  color: #008B8B;
+  padding: 5px;
+  text-align: left;
+  display: inline-block;
+  max-width: 250px;
+}
+
+section #painel #painel-central #conversa #mensagens .linhaMsg2 .msg2 {
+  border: 2px solid #008B8B;
+  background-color: #008B8B;
+  color: white;
+  padding: 5px;
+  text-align: left;
+  display: inline-block;
+  max-width: 250px;
+}
+
+section #painel #painel-central #conversa #digitacao {
+  border-top: 2px solid #008B8B;
+  background-color: white;
+  width: 400px;
+  display: flex;
+  grid-row: 3;
+}
+
+section #painel #painel-central #conversa #digitacao form {
+  display: grid;
+}
+
+section #painel #painel-central #conversa #digitacao form #col1 {
+  grid-row: 1;
+  grid-column: 1;
+}
+
+section #painel #painel-central #conversa #digitacao form #col2 {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+section #painel #painel-central #conversa #digitacao form textarea {
+  border-top: none;
+  border-left: none;
+  border-bottom: none;
+  border-right: 2px solid #008B8B;
+  padding: 15px;
+  width: 250px;
+  height: calc(100% - 30px);
+  resize: none;
+  outline: none;
+}
+
+section .lightbox{
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.15s ease-in;
+}
+
+section .lightbox.show{
+    background-color: rgba(0,0,0, 0.85);
+    opacity: 1;
+    visibility: visible;
+    z-index: 1000;
+}
+
+section #lightbox #painel-informacoes {
+  border: 3px solid #008B8B;
+  background-color: white;
+  width: 400px;
+  height: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #008B8B;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes #row1 {
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes #row2 {
+  grid-row: 2;
+  display: flex;
+  align-items: center;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes #row3 {
+  grid-row: 3;
+  display: flex;
+  align-items: center;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes #row4 {
+  grid-row: 4;
+  display: flex;
+  align-items: center;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes #col1 {
+  grid-column: 1;
+  column-width: 150px;
+  margin: 5px;
+  text-align: right;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes #col2 {
+  grid-column: 2;
+  margin: 5px;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes input[type=text] {
+  border: 2px solid #008B8B;
+  padding: 5px;
+  outline: none;
+  width: auto;
+}
+
+section #lightbox #painel-informacoes form #interno-painel-informacoes input[type=password] {
+  border: 2px solid #008B8B;
+  padding: 5px;
+  outline: none;
+  width: auto;
+}

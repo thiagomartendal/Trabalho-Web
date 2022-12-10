@@ -64,13 +64,37 @@ function iniciarConversa(nome, email) {
     conversa.classList.remove('show')
   }
   conversa.classList.add('show')
+  if (document.body.offsetWidth < 768) {
+    let painelCentral = document.getElementById('painel-central')
+    if (painelCentral.classList.contains('show')) {
+      painelCentral.classList.remove('show')
+    }
+    painelCentral.classList.add('show')
+  }
   titulo.innerHTML = nome + ' - ' + email
   exibirMensagens()
+  console.log()
 }
 
 function encerrarConversa() {
+  let conversa = document.getElementById('conversa')
   conversa.classList.remove('show')
+  if (document.body.offsetWidth < 768) {
+    let painelCentral = document.getElementById('painel-central')
+    painelCentral.classList.remove('show')
+  }
   clearInterval(atualizacaoMsg)
+}
+
+function atualizarPainelMsg() {
+  let conversa = document.getElementById('conversa')
+  if (document.body.offsetWidth < 768 && conversa.classList.contains('show')) {
+    let painelCentral = document.getElementById('painel-central')
+    if (painelCentral.classList.contains('show')) {
+      painelCentral.classList.remove('show')
+    }
+    painelCentral.classList.add('show')
+  }
 }
 
 function nl2br(str, is_xhtml) { // Função para adicionar quebra de linha na mensagem
@@ -128,5 +152,11 @@ function pesquisarMensagens() {
         divMensagens.innerHTML += '<div class="linhaMsg2"><div class="msg2">' + item.mensagem + '</div></div>'
       }
     })
+    // pesquisarMensagens()
   })
+  // .catch(res => {
+  //   if (res.status != 200) {
+  //     pesquisarMensagens()
+  //   }
+  // })
 }
