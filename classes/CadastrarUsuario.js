@@ -59,7 +59,7 @@ module.exports = class CadastrarUsuario {
       let db = cliente.db();
       let colecao = db.collection('usuario');
       var toUpdate = { nome: nome, senha: senha }
-      colecao.findOneAndUpdate(
+      await colecao.findOneAndUpdate(
         {email: email},
         {$set: toUpdate},
         {new: true}
