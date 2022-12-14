@@ -38,6 +38,20 @@
     res.send({situacaoCadastro: status})
   })
 
+
+  app.patch('/editaUsuario', async function(req, res) {
+    const CadastrarUsuario = require('./classes/CadastrarUsuario')
+    let novoNome = req.body['novoNome']
+    let email = req.body['email']
+    let novaSenha = req.body['novaSenha']
+    let cadastro = new CadastrarUsuario()
+    let status
+    await cadastro.editarUsuario(novoNome, email, novaSenha).then(res => {
+      status = res
+    })
+    res.send({cadastroEditado: status})
+  })
+
   app.post('/login', async function(req, res) {
     const Login = require('./classes/Login')
     let email = req.body['email-login']

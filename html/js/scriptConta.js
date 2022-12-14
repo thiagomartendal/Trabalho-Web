@@ -25,6 +25,43 @@ function esconderLightbox() {
   lightbox.classList.remove('show')
 }
 
+function editarUsuario() {
+  let novoNome = document.querySelector('input[name="novo-nome"]')
+  let email = document.querySelector('input[name="email-usuario"]')
+  let novaSenha = document.querySelector('input[name="nova-senha"]')
+  let confirmacaoSenha = document.querySelector('input[name="confirmacao-nova-senha"]')
+
+  let valNovoNome = novoNome.value
+  let valEmail = email.value
+  let valNovaSenha = novaSenha.value
+  let valConfirmacaoSenha = confirmacaoSenha.value
+
+  fetch('/editaUsuario', {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      novoNome: valNovoNome,
+      email: valEmail,
+      novaSenha: valNovaSenha
+    })
+  }).then(res => {
+    res.json().then((val) => {
+      let h4 = document.getElementById('mensagemEdicao')
+      if (!val.cadastroEditado) {
+        h4.innerHTML = 'Cadastro não editado'
+      } else {
+        h4.innerHTML = 'Cadastro realizado com sucesso.'
+        setTimeout(function() {
+          esconderLightbox()
+        }, 3000)
+      }
+    })
+  })
+
+}
+
 function busca() {
   let valorBusca = document.querySelector('input[name="valor-busca"]')
   const dados = {
