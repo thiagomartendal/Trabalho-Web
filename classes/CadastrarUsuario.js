@@ -1,3 +1,4 @@
+const uuid = require('uuid');
 module.exports = class CadastrarUsuario {
   #con
 
@@ -17,13 +18,11 @@ module.exports = class CadastrarUsuario {
     return cadastroRealizado
   }
 
-  async editarUsuario(nome, email, senha) {
+  async editarUsuario(nome, email, senha, id) {
     let edicaoRealizada = false
     let existeEmail = await this.#checarEmail(email)
-    if (existeEmail) {
-      console.log("existe email")
-      let retorno = await this.#atualizar(nome, email, senha)
-      console.log(retorno)
+    if (!existeEmail) {
+      let retorno = await this.#atualizar(nome, email, senha, id)
       edicaoRealizada = true
     }
     this.#con.fechar()
@@ -48,19 +47,20 @@ module.exports = class CadastrarUsuario {
 
   async #inserir(nome, email, senha) {
     await this.#con.cliente().connect().then(async function(cliente) {
+      let id = uuid.v4()
       let db = cliente.db()
       let colecao = db.collection('usuario')
-      await colecao.insertOne({nome: nome, email: email, senha: senha})
+      await colecao.insertOne({nome: nome, email: email, senha: senha, id: id})
     })
   }
 
-  async #atualizar(nome, email, senha) {
+  async #atualizar(nome, email, senha, id) {
     await this.#con.cliente().connect().then(async function(cliente) {
       let db = cliente.db();
       let colecao = db.collection('usuario');
-      var toUpdate = { nome: nome, senha: senha }
+      var toUpdate = { nome: nome, senha: senha, email: email }
       await colecao.findOneAndUpdate(
-        {email: email},
+        {id: id},
         {$set: toUpdate},
         {new: true}
       );
