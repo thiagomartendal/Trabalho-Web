@@ -1,4 +1,4 @@
-let usuarioAtual
+let idUsuarioAtual
 
 function boasVindas() {
   fetch('/usuario', {
@@ -10,7 +10,7 @@ function boasVindas() {
     let h1 = document.getElementById('boas-vindas')
     res.json().then((val) => {
       h1.innerHTML += val.nome
-      usuarioAtual = val.email
+      idUsuarioAtual = val.id
     })
   })
 }
@@ -23,6 +23,44 @@ function exibirLightbox() {
 function esconderLightbox() {
   let lightbox = document.getElementById('lightbox')
   lightbox.classList.remove('show')
+}
+
+function editarUsuario() {
+  let novoNome = document.querySelector('input[name="novo-nome"]')
+  let email = document.querySelector('input[name="email-usuario"]')
+  let novaSenha = document.querySelector('input[name="nova-senha"]')
+  let confirmacaoSenha = document.querySelector('input[name="confirmacao-nova-senha"]')
+
+  let valNovoNome = novoNome.value
+  let valEmail = email.value
+  let valNovaSenha = novaSenha.value
+  let valConfirmacaoSenha = confirmacaoSenha.value
+
+  fetch('/editaUsuario', {
+    method: 'PATCH',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      novoNome: valNovoNome,
+      email: valEmail,
+      novaSenha: valNovaSenha,
+      id: idUsuarioAtual
+    })
+  }).then(res => {
+    res.json().then((val) => {
+      let h4 = document.getElementById('mensagemEdicao')
+      if (!val.cadastroEditado) {
+        h4.innerHTML = 'Erro ao editar perfil'
+      } else {
+        h4.innerHTML = 'Perfil editado com sucesso!'
+        setTimeout(function() {
+          esconderLightbox()
+        }, 3000)
+      }
+    })
+  })
+
 }
 
 function busca() {
@@ -138,25 +176,23 @@ function pesquisarMensagens() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-    }
+    },
+    body: JSON.stringify({
+        emailDestinatario: usuarioConversa,
+    })
+    
   }).then(res => {
     return res.json()
   }).then(res => {
     let divMensagens = document.getElementById('mensagens')
     divMensagens.innerHTML = ''
-    res.forEach(item => {
-      if (item.email_usuario_remetente == usuarioAtual && item.email_usuario_destinatario == usuarioConversa) {
-        divMensagens.innerHTML += '<div class="linhaMsg1"><div class="msg1">' + item.mensagem + '</div></div>'
+    res.forEach(mensagem => {
+      if (mensagem.id_usuario_remetente == idUsuarioAtual) {
+        divMensagens.innerHTML += '<div class="linhaMsg2"><div class="msg2">' + mensagem.mensagem + '</div></div>'
       }
-      if (item.email_usuario_remetente == usuarioConversa && item.email_usuario_destinatario == usuarioAtual) {
-        divMensagens.innerHTML += '<div class="linhaMsg2"><div class="msg2">' + item.mensagem + '</div></div>'
+      else {
+        divMensagens.innerHTML += '<div class="linhaMsg1"><div class="msg1">' + mensagem.mensagem + '</div></div>'
       }
     })
-    // pesquisarMensagens()
   })
-  // .catch(res => {
-  //   if (res.status != 200) {
-  //     pesquisarMensagens()
-  //   }
-  // })
 }

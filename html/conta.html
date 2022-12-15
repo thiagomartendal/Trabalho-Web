@@ -72,15 +72,15 @@
                   Nome:
                 </div>
                 <div id="col2">
-                  <input type="text" />
+                  <input type="text" name="novo-nome" />
                 </div>
               </div>
               <div id="row2">
                 <div id="col1">
-                  Email:
+                  Email atual do usuário:
                 </div>
                 <div id="col2">
-                  <input type="text" />
+                  <input type="text" name="email-usuario" />
                 </div>
               </div>
               <div id="row3">
@@ -88,7 +88,7 @@
                   Senha:
                 </div>
                 <div id="col2">
-                  <input type="password" />
+                  <input type="password"  name="nova-senha" />
                 </div>
               </div>
               <div id="row4">
@@ -96,14 +96,15 @@
                   Confirmar senha:
                 </div>
                 <div id="col2">
-                  <input type="password" />
+                  <input type="password"  name="confirmacao-nova-senha"/>
                 </div>
               </div>
             </div>
             <br />
             <input type="button" value="Fechar" class="btn" onclick="esconderLightbox()" />
-            <input type="button" value="Atualizar Dados" class="btn" />
+            <input type="button" value="Atualizar Dados" class="btn" onclick="editarUsuario()" />
           </form>
+          <h4 id="mensagemEdicao" style="text-align: center; padding: 5px;"></h4>
         </div>
       </div>
     </section>

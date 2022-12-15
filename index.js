@@ -32,10 +32,26 @@
     let senha = req.body['senhaConta']
     let cadastro = new CadastrarUsuario()
     let status
+
     await cadastro.cadastrarUsuario(nome, email, senha).then(res => {
       status = res
     })
     res.send({situacaoCadastro: status})
+  })
+
+
+  app.patch('/editaUsuario', async function(req, res) {
+    const CadastrarUsuario = require('./classes/CadastrarUsuario')
+    let novoNome = req.body['novoNome']
+    let email = req.body['email']
+    let novaSenha = req.body['novaSenha']
+    let id = req.body['id']
+    let cadastro = new CadastrarUsuario()
+    let status
+    await cadastro.editarUsuario(novoNome, email, novaSenha, id).then(res => {
+      status = res
+    })
+    res.send({cadastroEditado: status})
   })
 
   app.post('/login', async function(req, res) {
@@ -72,7 +88,6 @@
   })
 
   app.get('/conta', function(req, res) {
-    // if (usuarioConectado) {
     if (req.session.usuarioConectado) {
       res.sendFile(__dirname + '/html/conta.html')
     } else {
@@ -108,15 +123,16 @@
     let emailDestinatario = req.body['emailDestinatario']
     let msg = req.body['msg']
     const mensagem = new Mensagem()
-    await mensagem.enviar(req.session.usuario.email, emailDestinatario, msg)
+    await mensagem.enviar(req.session.usuario.id, emailDestinatario, msg)
     mensagem.fechar()
   })
 
   app.post('/retornarMensagens', async function(req, res) {
     if (req.session.usuario) {
+      let emailDestinatario = req.body['emailDestinatario']
       const Mensagem = require('./classes/Mensagem')
       const mensagem = new Mensagem()
-      let mensagens = await mensagem.buscar(req.session.usuario.email)
+      let mensagens = await mensagem.buscar(req.session.usuario.id, emailDestinatario)
       mensagem.fechar()
       res.send(mensagens)
     }

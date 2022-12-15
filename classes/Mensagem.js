@@ -6,20 +6,32 @@ module.exports = class Mensagem {
     this.#con = new conexao()
   }
 
-  async enviar(remetente, destinatario, mensagem) {
+  async enviar(idRemetente, emailDestinatario, mensagem) {
     await this.#con.cliente().connect().then(async function(cliente) {
       let db = cliente.db()
-      let colecao = db.collection('conversa')
-      await colecao.insertOne({email_usuario_remetente: remetente, email_usuario_destinatario: destinatario, mensagem: mensagem})
+      let colecaoConversa = db.collection('conversa')
+      let colecaoUsuario = db.collection('usuario')
+      const usuario = await colecaoUsuario.findOne({email: emailDestinatario})
+      let destinatarioId = usuario.id
+      await colecaoConversa.insertOne({id_usuario_remetente: idRemetente, id_usuario_destinatario: destinatarioId, mensagem: mensagem})
     })
   }
 
-  async buscar(emailUsuario) {
+  async buscar(idRemetente, emailDestinatario) {
     let mensagens
     await this.#con.cliente().connect().then(async function(cliente) {
       let db = cliente.db()
       let colecao = db.collection('conversa')
-      const consulta = {$or: [{email_usuario_remetente: emailUsuario}, {email_usuario_destinatario: emailUsuario}]}
+      let colecaoUsuario = db.collection('usuario')
+      const usuario = await colecaoUsuario.findOne({email: emailDestinatario})
+      let destinatarioId = usuario.id
+      const consulta = {
+        $or: 
+          [
+            {id_usuario_remetente: idRemetente, id_usuario_destinatario: destinatarioId}, 
+            {id_usuario_remetente: destinatarioId, id_usuario_destinatario: idRemetente}
+          ]
+      }
       mensagens = await colecao.find(consulta).toArray()
     })
     mensagens.forEach(item => {
