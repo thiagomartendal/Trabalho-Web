@@ -58,7 +58,12 @@ module.exports = class CadastrarUsuario {
     await this.#con.cliente().connect().then(async function(cliente) {
       let db = cliente.db();
       let colecao = db.collection('usuario');
-      var toUpdate = { nome: nome, senha: senha, email: email }
+      var toUpdate = {}
+      if (senha != "") {
+        toUpdate = { nome: nome, senha: senha, email: email }
+      } else {
+        toUpdate = { nome: nome, email: email }
+      }
       await colecao.findOneAndUpdate(
         {id: id},
         {$set: toUpdate},

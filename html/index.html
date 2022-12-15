@@ -29,7 +29,7 @@
                   Email
                 </div>
                 <div class="col2">
-                  <input type="text" name="email-login" placeholder="Email para acesso" />
+                  <input type="text" name="email-login" placeholder="Email para acesso" onkeyup="validaLogin()" />
                 </div>
               </div>
               <div class="lin2">
@@ -37,12 +37,12 @@
                   Senha
                 </div>
                 <div class="col2">
-                  <input type="password" name="senha-login" placeholder="Senha da conta" />
+                  <input type="password" name="senha-login" placeholder="Senha da conta" onkeyup="validaLogin()" />
                 </div>
               </div>
             </div>
             <div class="botoes">
-              <input type="submit" class="btn" value="Entrar">
+              <input type="submit" class="btn-dst" value="Entrar" disabled>
               <input type="button" class="btn" value="Nova Conta" onclick="exibirNovaConta()">
             </div>
           </form>
@@ -56,7 +56,7 @@
                     Nome
                   </div>
                   <div class="col2">
-                    <input type="text" name="nome-conta" placeholder="Um nome de usuário" />
+                    <input type="text" name="nome-conta" placeholder="Um nome de usuário" onkeyup="validaNovaConta()" />
                   </div>
                 </div>
                 <div class="lin2">
@@ -64,7 +64,7 @@
                     Email
                   </div>
                   <div class="col2">
-                    <input type="text" name="email-conta" placeholder="Email para acesso" />
+                    <input type="text" name="email-conta" placeholder="Email para acesso" onkeyup="validaNovaConta()" />
                   </div>
                 </div>
                 <div class="lin3">
@@ -72,13 +72,21 @@
                     Senha
                   </div>
                   <div class="col2">
-                    <input type="password" name="senha-conta" placeholder="Senha da conta" />
+                    <input type="password" name="senha-conta" placeholder="Senha da conta" onkeyup="validaNovaConta()" />
+                  </div>
+                </div>
+                <div class="lin4">
+                  <div class="col1">
+                    Confirmar senha
+                  </div>
+                  <div class="col2">
+                    <input type="password" name="confirmar-senha-conta" placeholder="Senha da conta" onkeyup="validaNovaConta()" />
                   </div>
                 </div>
               </div>
               <div class="botoes">
                 <input type="button" class="btn" value="Cancelar" onclick="esconderNovaConta()" />
-                <input type="button" class="btn" value="Criar Conta" onclick="envioNovaConta()" />
+                <input type="button" class="btn-dst" value="Criar Conta" onclick="envioNovaConta()" disabled />
               </div>
             </form>
             <h4 id="msgNovaConta" style="text-align: center; padding: 5px;"></h4>

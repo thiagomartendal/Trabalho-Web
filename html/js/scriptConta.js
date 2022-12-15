@@ -8,8 +8,12 @@ function boasVindas() {
     }
   }).then(res => {
     let h1 = document.getElementById('boas-vindas')
+    let novoNome = document.querySelector('input[name="novo-nome"]')
+    let emailUsuario = document.querySelector('input[name="email-usuario"]')
     res.json().then((val) => {
       h1.innerHTML += val.nome
+      novoNome.value = val.nome
+      emailUsuario.value = val.email
       idUsuarioAtual = val.id
     })
   })
@@ -97,7 +101,7 @@ let usuarioConversa
 function iniciarConversa(nome, email) {
   usuarioConversa = email
   let conversa = document.getElementById('conversa')
-  let titulo = document.getElementById('titulo')
+  let titulo = document.getElementById('quebra-titulo')
   if (conversa.classList.contains('show')) {
     conversa.classList.remove('show')
   }
@@ -180,7 +184,7 @@ function pesquisarMensagens() {
     body: JSON.stringify({
         emailDestinatario: usuarioConversa,
     })
-    
+
   }).then(res => {
     return res.json()
   }).then(res => {

@@ -24,6 +24,10 @@ section .btn:hover {
 
 section .largura-botao {
   width: 250px;
+  max-width: 250px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 section #painel {
@@ -112,15 +116,22 @@ section #painel #painel-central #conversa #titulo {
   grid-row: 1;
 }
 
+section #painel #painel-central #conversa #titulo #quebra-titulo {
+  max-width: 630px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 section #painel #painel-central #conversa #barra-mensagens {
   width: 650px;
-  padding-bottom: 15px;
+  margin-top: 7.5px;
+  margin-bottom: 7.5px;
   overflow-y: auto;
   grid-row: 2;
 }
 
 section #painel #painel-central #conversa #mensagens {
-  /* width: 400px; */
   width: 615px;
   text-align: center;
   margin: 0px auto;
@@ -197,7 +208,7 @@ section #painel #painel-central #conversa #digitacao form textarea {
   outline: none;
 }
 
-section .lightbox{
+section .lightbox {
     opacity: 0;
     visibility: hidden;
     position: fixed;
@@ -212,7 +223,7 @@ section .lightbox{
     transition: all 0.15s ease-in;
 }
 
-section .lightbox.show{
+section .lightbox.show {
     background-color: rgba(0,0,0, 0.85);
     opacity: 1;
     visibility: visible;

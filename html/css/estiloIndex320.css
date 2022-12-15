@@ -74,6 +74,12 @@ section #login .interno form .grade .col1 {
   padding: 5px;
 }
 
+section #login .interno #novaConta form .grade .col1 {
+  grid-column: 1;
+  column-width: 90px;
+  padding: 5px;
+}
+
 section #login .interno form .grade .lin2 {
   grid-row: 2;
   display: flex;
@@ -90,10 +96,24 @@ section #login .interno form .grade .lin3 {
   justify-content: center;
 }
 
+section #login .interno form .grade .lin4 {
+  grid-row: 4;
+  display: flex;
+  justify-content: center;
+}
+
 section #login .interno form .botoes {
   margin: 5px;
   padding: 5px;
   text-align: center;
+}
+
+section #login .interno form .botoes .btn-dst {
+  border: 2px solid #ccc;
+  background-color: #ccc;
+  padding: 5px;
+  font-size: 16px;
+  color: black;
 }
 
 section #login .interno form .botoes .btn {
@@ -124,14 +144,14 @@ section #login #novaConta input[type=text] {
   border: 2px solid white;
   padding: 5px;
   outline: none;
-  width: 190px;
+  width: 160px;
 }
 
 section #login #novaConta input[type=password] {
   border: 2px solid white;
   padding: 5px;
   outline: none;
-  width: 190px;
+  width: 160px;
 }
 
 section #login .interno #novaConta h1 {
