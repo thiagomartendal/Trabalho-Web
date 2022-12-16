@@ -22,7 +22,7 @@ module.exports = class CadastrarUsuario {
     let edicaoRealizada = false
     let existeEmail = await this.#checarEmail(email)
     if (!existeEmail) {
-      let retorno = await this.#atualizar(nome, email, senha, id)
+      await this.#atualizar(nome, email, senha, id)
       edicaoRealizada = true
     }
     this.#con.fechar()
