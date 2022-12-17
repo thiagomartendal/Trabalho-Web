@@ -6,7 +6,7 @@
 
 ## Acessando o projeto
 * O projeto estará disponível em ``` http://localhost:4000/``` quando rodado localmente
-* Também está disponível em ```chat.marina.guidolin.vms.ufsc.br ``` e pode ser acessado a partir da rede UFSC
+* Também está disponível em ```chat.marina.guidolin.vms.ufsc.br:4000 ``` e pode ser acessado a partir da rede UFSC
 
 ## Equipe:
 
