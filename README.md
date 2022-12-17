@@ -10,8 +10,8 @@
 
 ## Equipe:
 
-Gabriel Carneiro
+Gabriel Medeiros Lopes Carneiro (19103977)
 
-Marina Guidolin
+Marina Pereira das Neves Guidolin (16204555)
 
-Thiago Martendal - 16104594
+Thiago Martendal Salvador (16104594)
